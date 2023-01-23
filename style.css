@@ -31,39 +31,50 @@ nav {
   align-items: center;
   justify-content: space-between;
   height: 80px;
+  flex-wrap: wrap;
 }
 nav > ul {
   display: flex;
   list-style: none;
   gap: 25px;
+  flex-wrap: wrap;
+}
+ul > li {
+  list-style: none;
 }
 /* NavBar Style End */
 
 /* Section Style Start */
-.section {
+.section-primary {
   padding: 14rem 25px;
+  background-color: var(--light-gray);
+}
+.section-secondary {
+  padding: 14rem 25px;
+  background-color: var(--black);
 }
 
 /* Section Title Style Start */
 .section__title-container {
   display: flex;
   align-items: center;
+  margin-bottom: 15px;
 }
 .section__title--primary,
-.section__title--secondary,.section__title--tertiary {
+.section__title--secondary,
+.section__title--tertiary {
   flex-shrink: 0;
 }
-.section__title--primary{
+.section__title--primary {
   color: var(--black);
 }
-.section__title--secondary{
+.section__title--secondary {
   color: var(--hot-pink);
 }
-.section__title--tertiary{
+.section__title--tertiary {
   color: var(--light-gray);
 }
 /* Section Title Style End */
-
 
 /* Section line style Start */
 .line--primary,
@@ -84,7 +95,6 @@ nav > ul {
 }
 /* Section line style End */
 
-
 /* Section text Style Start */
 .section__text--primary,
 .section__text--secondary,
@@ -92,30 +102,97 @@ nav > ul {
   font-size: 3rem;
   font-weight: 300;
 }
-.section__text--primary{
+.section__text--primary {
   color: var(--black);
 }
-.section__text--secondary{
+.section__text--secondary {
   color: var(--hot-pink);
 }
-.section__text--tertiary{
+.section__text--tertiary {
   color: var(--light-gray);
 }
 /* Section text Style End */
 
 /* Section Style End */
 
-
 /* Photo Gallery Style Start */
 .photo-gallery {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
 }
-.photo-gallery > img{
+.photo-gallery > img {
   height: 100%;
   width: 100%;
 }
-.long-img{
+.long-img {
   grid-row: span 2;
 }
 /* Photo Gallery Style End */
+
+.logo-container {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+/* Footer Style Start */
+.footer-section {
+  width: 100%;
+  max-width: 1250px;
+  margin: 0 auto;
+  padding: 5rem 25px;
+  background-color: var(--light-gray);
+}
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  text-align: center;
+}
+.footer-text > p {
+  color: var(--gray);
+}
+.footer-logo > ul {
+  display: flex;
+}
+
+.footer-logo > ul > li {
+  margin-right: 2em;
+}
+/* Footer Style End */
+
+@media only screen and (max-width: 850px) {
+  .photo-gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .long-img {
+    grid-row: span 1;
+  }
+  .line--primary,
+  .line--secondary,
+  .line--tertiary {
+    display: none;
+  }
+  .section__title-container {
+    justify-content: center;
+  }
+  .section__text--primary,
+  .section__text--secondary,
+  .section__text--tertiary {
+    font-size: 2.5rem;
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  .footer-logo {
+    margin-top: 2em;
+  }
+  .footer-logo > ul {
+    justify-content: center;
+  }
+}
